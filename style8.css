@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.input-container {
+  position: relative;
+  width: 300px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #666;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+label {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: #888;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown):valid ~ label {
+  top: -10px;
+  font-size: 12px;
+  color: #00f0ff;
+}
+
+.underline {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #00f0ff, #ff00f2);
+  transition: width 0.3s ease;
+}
+
+input:focus ~ .underline {
+  width: 100%;
+}
